@@ -2,14 +2,9 @@
   <div class="container">
     <b-button v-b-modal.modal-1 class="mb-3">Add Blog</b-button>
 
-    <b-modal v-model="showModal" id="modal-1" title="BootstrapVue">
+    <b-modal v-model="showModal" id="modal-1" title="Add blog to list">
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-        <b-form-group
-          id="input-group-1"
-          label="Your title:"
-          label-for="input-1"
-          description="We'll never share your email with anyone else."
-        >
+        <b-form-group id="input-group-1" label="Title:" label-for="input-1">
           <b-form-input
             id="input-1"
             v-model="form.title"
@@ -19,11 +14,7 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-form-group
-          id="input-group-2"
-          label="Your subtitle:"
-          label-for="input-2"
-        >
+        <b-form-group id="input-group-2" label="Subtitle:" label-for="input-2">
           <b-form-input
             id="input-2"
             v-model="form.subtitle"
@@ -55,7 +46,7 @@
           >
           </b-form-input>
         </b-form-group>
-        <b-button type="submit" variant="primary">Submit</b-button>
+        <b-button type="submit" variant="primary" class="mr-2">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
       </b-form>
       <b-card class="mt-3" header="Form Data Result">
