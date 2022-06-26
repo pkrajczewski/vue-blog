@@ -1,18 +1,21 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <BlogList :blogs="blogs" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import BlogList from "@/components/blog-list/blog-list";
+import { mapState } from "vuex";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    BlogList,
+  },
+  computed: {
+    ...mapState("Blogs", ["blogs"]),
   },
 };
 </script>
